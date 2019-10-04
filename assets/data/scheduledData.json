@@ -1,0 +1,74 @@
+[
+  {
+    "jobName": "job1",
+    "objectType": "site",
+    "source": "ENM",
+    "createdOn": "07/03/2019",
+    "createdBy": "sysadm",
+    "frequency": "Daily",
+    "time": "13:00",
+    "day": "Monday",
+    "date": "12/11/2019",
+    "comment": "Test Job"
+  },
+  {
+    "jobName": "job2",
+    "objectType": "MME, LTE",
+    "source": "ENM1",
+    "createdOn": "12/03/2019",
+    "createdBy": "sysadm",
+    "frequency": "Weekly",
+    "time": "14:00",
+    "day": "Tuesday",
+    "date": "11/11/2019",
+    "comment": "MME Job"
+  },
+  {
+    "jobName": "job3",
+    "objectType": "ENODEB",
+    "source": "ENM2",
+    "createdOn": "15/05/2019",
+    "createdBy": "sysadm",
+    "frequency": "Monthly",
+    "time": "12:11",
+    "day": "Wednesday",
+    "date": "12/01/2019",
+    "comment": "140 testing"
+  },
+  {
+    "jobName": "job4",
+    "objectType": "SGW",
+    "source": "ENM3",
+    "createdOn": "07/03/2019",
+    "createdBy": "sysadm",
+    "frequency": "Daily",
+    "time": "19:00",
+    "day": "Thursday",
+    "date": "22/11/2019",
+    "comment": "140 testing"
+  },
+  {
+    "jobName": "job5",
+    "objectType": "MGW",
+    "source": "ENM4",
+    "createdOn": "07/03/2019",
+    "createdBy": "sysadm",
+    "frequency": "Weekly",
+    "time": "23:00",
+    "day": "Friday",
+    "date": "19/06/2019",
+    "comment": "140 testing"
+  },
+  {
+    "jobName": "job6",
+    "objectType": "MME, LTE",
+    "source": "ENM5",
+    "createdOn": "22/12/2019",
+    "createdBy": "sysadm",
+    "frequency": "Daily",
+    "time": "13:00",
+    "day": "Saturday",
+    "date": "02/01/2019",
+    "comment": "All Objects"
+  }
+]
