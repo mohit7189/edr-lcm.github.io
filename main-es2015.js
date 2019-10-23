@@ -36,6 +36,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/home-job-report/home-job-report.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home-job-report/home-job-report.component.html ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-md-3 col-sm-3\">\n      <label for=\"pageSizeJob\">Per Page </label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n          [(ngModel)]=\"pageSize\"\n        >\n          <option [ngValue]=\"5\">5</option>\n          <option [ngValue]=\"10\">10</option>\n          <option [ngValue]=\"25\">25</option>\n          <option [ngValue]=\"50\">50</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-md-9 col-sm-9 headingText\">\n      <h3>Detailed Job Report for AB Job Id: 10</h3>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-5 col-sm-5\"></div>\n    <div class=\"col-sm-4 col-md-4\" style=\"float:right\">\n      <div class=\"col-md-8 col-sm-8\" style=\"margin:10px\">\n        <input\n          class=\"searchBox\"\n          type=\"text\"\n          placeholder=\"Search\"\n          [(ngModel)]=\"searchText\"\n        />\n      </div>\n      <div type=\"button\" class=\"btn btn-secondary buttonRefresh\">\n        <img\n          src=\"../../assets/images/Refresh.svg\"\n          width=\"16\"\n          height=\"16\"\n          name=\"refreshIcon\"\n          alt=\"alternative text\"\n          title=\"Refresh List\"\n        />\n      </div>\n    </div>\n  </div>\n  <div class=\"row table-responsive\">\n    <table class=\"table table-sm table-bordered table-striped\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Sl No</th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'name'\"\n            (click)=\"setOrder('name')\"\n          >\n            Name\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'objectType'\"\n            (click)=\"setOrder('objectType')\"\n          >\n            Object Type\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'status'\"\n            (click)=\"setOrder('status')\"\n          >\n            Status\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'discrepancyType'\"\n            (click)=\"setOrder('discrepancyType')\"\n          >\n            Discrepancy Type\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'actionTaken'\"\n            (click)=\"setOrder('actionTaken')\"\n          >\n            Action Taken\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'comment'\"\n            (click)=\"setOrder('comment')\"\n          >\n            Comment\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr\n          *ngFor=\"\n            let reportdata of homejobreportData\n              | filter: searchText\n              | orderBy: order:reverse:'case-insensitive'\n              | paginate: { itemsPerPage: pageSize, currentPage: p };\n            let i = index\n          \"\n        >\n          <td>\n            <b>{{ i + 1 }}</b>\n          </td>\n          <td>\n            <a href=\"#\">{{ reportdata.name }}</a>\n          </td>\n          <td>{{ reportdata.objectType }}</td>\n          <td>{{ reportdata.status }}</td>\n          <td>{{ reportdata.discrepancyType }}</td>\n          <td>{{ reportdata.actionTaken }}</td>\n          <td>{{ reportdata.comment }}</td>\n        </tr>\n      </tbody>\n    </table>\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n  </div>\n\n  <div class=\"row table-responsive\">\n    <span class=\"d-block mb-3\"\n      ><u><a href=\"#\">Error Details</a></u></span\n    >\n    <table class=\"table table-sm table-bordered text-left table-striped\">\n      <thead>\n        <tr>\n          <th>Property</th>\n          <th>Value</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td><a href=\"#\">Name</a></td>\n          <td>Test Site1</td>\n        </tr>\n        <tr>\n          <td><a href=\"#\">Error Message</a></td>\n          <td>\n            Object Update Failed. End State Validations Failed.\n            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/job-status-home/job-status-home.component.html":
 /*!******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/job-status-home/job-status-home.component.html ***!
@@ -45,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-md-3 col-sm-3\">\n      <label for=\"pageSizeJob\">Per Page </label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n          [(ngModel)]=\"pageSize\"\n        >\n          <option [ngValue]=\"5\">5</option>\n          <option [ngValue]=\"10\">10</option>\n          <option [ngValue]=\"25\">25</option>\n          <option [ngValue]=\"50\">50</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-md-9 col-sm-9 headingText\">\n      <h3>Job Status Details for AB</h3>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-5 col-sm-5\">\n      <label for=\"pageSizeJob\">Select Customer</label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n        >\n          <option>Select</option>\n          <option>AB</option>\n          <option>Bharti NMC</option>\n          <option>ASBANC-O-MS-PE</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-sm-4 col-md-4\" style=\"float:right\">\n      <div class=\"col-md-8 col-sm-8\" style=\"margin:10px\">\n        <input\n          class=\"searchBox\"\n          type=\"text\"\n          placeholder=\"Search\"\n          [(ngModel)]=\"searchText\"\n        />\n      </div>\n      <div type=\"button\" class=\"btn btn-secondary buttonRefresh\">\n        <img\n          src=\"../../assets/images/Refresh.svg\"\n          width=\"16\"\n          height=\"16\"\n          name=\"refreshIcon\"\n          alt=\"alternative text\"\n          title=\"Refresh List\"\n        />\n      </div>\n    </div>\n  </div>\n  <div class=\"row table-responsive\">\n    <table class=\"table table-sm table-bordered table-striped\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Sl No</th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'jobKey'\"\n            (click)=\"setOrder('jobKey')\"\n          >\n            Job Key\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'objectType'\"\n            (click)=\"setOrder('objectType')\"\n          >\n            Object Type\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'status'\"\n            (click)=\"setOrder('status')\"\n          >\n            Status\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'reportingLevel'\"\n            (click)=\"setOrder('reportingLevel')\"\n          >\n            Reporting Level\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'createdOn'\"\n            (click)=\"setOrder('createdOn')\"\n          >\n            Created On\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'createdBy'\"\n            (click)=\"setOrder('createdBy')\"\n          >\n            Created By\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'runType'\"\n            (click)=\"setOrder('runType')\"\n          >\n            Run Type\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'comment'\"\n            (click)=\"setOrder('comment')\"\n          >\n            Comment\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr\n          *ngFor=\"\n            let jobdata of jobstatusData\n              | filter: searchText\n              | orderBy: order:reverse:'case-insensitive'\n              | paginate: { itemsPerPage: pageSize, currentPage: p };\n            let i = index\n          \"\n        >\n          <td>\n            <b>{{ i + 1 }}</b>\n          </td>\n          <td>\n            <a href=\"#\">{{ jobdata.jobKey }}</a>\n          </td>\n          <td>{{ jobdata.objectType }}</td>\n          <td>{{ jobdata.status }}</td>\n          <td>{{ jobdata.reportingLevel }}</td>\n          <td>{{ jobdata.createdOn }}</td>\n          <td>{{ jobdata.createdBy }}</td>\n          <td>{{ jobdata.runType }}</td>\n          <td>{{ jobdata.comment }}</td>\n        </tr>\n      </tbody>\n    </table>\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-md-3 col-sm-3\">\n      <label for=\"pageSizeJob\">Per Page </label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n          [(ngModel)]=\"pageSize\"\n        >\n          <option [ngValue]=\"5\">5</option>\n          <option [ngValue]=\"10\">10</option>\n          <option [ngValue]=\"25\">25</option>\n          <option [ngValue]=\"50\">50</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-md-9 col-sm-9 headingText\">\n      <h3>Job Status Details for AB</h3>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-5 col-sm-5\">\n      <label for=\"pageSizeJob\">Select Customer</label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n        >\n          <option>Select</option>\n          <option>AB</option>\n          <option>Bharti NMC</option>\n          <option>ASBANC-O-MS-PE</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-sm-4 col-md-4\" style=\"float:right\">\n      <div class=\"col-md-8 col-sm-8\" style=\"margin:10px\">\n        <input\n          class=\"searchBox\"\n          type=\"text\"\n          placeholder=\"Search\"\n          [(ngModel)]=\"searchText\"\n        />\n      </div>\n      <div type=\"button\" class=\"btn btn-secondary buttonRefresh\">\n        <img\n          src=\"../../assets/images/Refresh.svg\"\n          width=\"16\"\n          height=\"16\"\n          name=\"refreshIcon\"\n          alt=\"alternative text\"\n          title=\"Refresh List\"\n        />\n      </div>\n    </div>\n  </div>\n  <div class=\"row table-responsive\">\n    <table class=\"table table-sm table-bordered table-striped\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Sl No</th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'jobKey'\"\n            (click)=\"setOrder('jobKey')\"\n          >\n            Job Key\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'objectType'\"\n            (click)=\"setOrder('objectType')\"\n          >\n            Object Type\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'status'\"\n            (click)=\"setOrder('status')\"\n          >\n            Status\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'reportingLevel'\"\n            (click)=\"setOrder('reportingLevel')\"\n          >\n            Reporting Level\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'createdOn'\"\n            (click)=\"setOrder('createdOn')\"\n          >\n            Created On\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'createdBy'\"\n            (click)=\"setOrder('createdBy')\"\n          >\n            Created By\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'runType'\"\n            (click)=\"setOrder('runType')\"\n          >\n            Run Type\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n          <th\n            scope=\"col\"\n            [class.active]=\"order === 'comment'\"\n            (click)=\"setOrder('comment')\"\n          >\n            Comment\n            <span [hidden]=\"reverse\">\n              <img\n                src=\"../../assets/images/Move_Up.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n            <span [hidden]=\"!reverse\">\n              <img\n                src=\"../../assets/images/Move_Down.svg\"\n                height=\"16\"\n                width=\"16\"\n              />\n            </span>\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr\n          *ngFor=\"\n            let jobdata of jobstatusData\n              | filter: searchText\n              | orderBy: order:reverse:'case-insensitive'\n              | paginate: { itemsPerPage: pageSize, currentPage: p };\n            let i = index\n          \"\n        >\n          <td>\n            <b>{{ i + 1 }}</b>\n          </td>\n          <td>\n            <a [routerLink]=\"['/homejobreport']\">{{ jobdata.jobKey }}</a>\n          </td>\n          <td>{{ jobdata.objectType }}</td>\n          <td>{{ jobdata.status }}</td>\n          <td>{{ jobdata.reportingLevel }}</td>\n          <td>{{ jobdata.createdOn }}</td>\n          <td>{{ jobdata.createdBy }}</td>\n          <td>{{ jobdata.runType }}</td>\n          <td>{{ jobdata.comment }}</td>\n        </tr>\n      </tbody>\n    </table>\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -71,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <h3 class=\"text-center color-grey\">Edit Scheduled EDR Job</h3>\n  <hr />\n  <form\n    id=\"submitEdrJob\"\n    name=\"submitEdrJob\"\n    #submitEdrJob=\"ngForm\"\n    (ngSubmit)=\"submitEdrJob.form.valid && edrJobSubmit(submitEdrJob)\"\n    novalidate\n  >\n    <table class=\"table table-striped table-bordered\">\n      <tbody>\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && jobName.invalid) ||\n              (jobName.touched && jobName.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"jobName\" class=\"required control-label ml-40\"\n              >Enter Job Name</label\n            >\n          </td>\n          <td>\n            <input\n              type=\"text\"\n              id=\"jobName\"\n              name=\"jobName\"\n              #jobName=\"ngModel\"\n              [(ngModel)]=\"model.jobName\"\n              class=\"form-control w-40 text-left\"\n              required\n              minlength=\"4\"\n              required\n            />\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && jobName.invalid) ||\n                (jobName.touched && jobName.invalid)\n              \"\n              >Job name is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && selectCustomer.invalid) ||\n              (selectCustomer.touched && selectCustomer.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"selectCustomer\" class=\"required control-label ml-40\"\n              >Select Customer</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"selectCustomer\"\n              name=\"selectCustomer\"\n              #selectCustomer=\"ngModel\"\n              [(ngModel)]=\"model.selectCustomer\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option>AB</option>\n              <option>ASBANC-O-MS-PE</option>\n              <option>ATT-O-MS-MX</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && selectCustomer.invalid) ||\n                (selectCustomer.touched && selectCustomer.invalid)\n              \"\n              >Select Customer is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && object.invalid) ||\n              (object.touched && object.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"objectType\" class=\"required control-label ml-40\"\n              >Object Type</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"objectType\"\n              name=\"objectType\"\n              #objectType=\"ngModel\"\n              [(ngModel)]=\"model.objectType\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option>SITE</option>\n              <option>MME</option>\n              <option>LTE Cell</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && object.invalid) ||\n                (object.touched && object.invalid)\n              \"\n              >Select Object is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && source.invalid) ||\n              (source.touched && source.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"source\" class=\"required control-label ml-40\"\n              >Source</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"source\"\n              name=\"source\"\n              #source=\"ngModel\"\n              [(ngModel)]=\"model.source\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option>EMS</option>\n              <option>ASBANC-O-MS-PE</option>\n              <option>ATT-O-MS-MX</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && source.invalid) ||\n                (source.touched && source.invalid)\n              \"\n              >Select Source is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && createdOn.invalid) ||\n              (createdOn.touched && createdOn.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"createdOn\" class=\"required control-label ml-40\"\n              >Created On</label\n            >\n          </td>\n          <td>\n            <input\n              type=\"date\"\n              id=\"createdOn\"\n              name=\"createdOn\"\n              #createdOn=\"ngModel\"\n              [(ngModel)]=\"model.createdOn\"\n              class=\"form-control w-40\"\n              required\n            />\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && createdOn.invalid) ||\n                (createdOn.touched && createdOn.invalid)\n              \"\n              >Enter Created On is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && createdBy.invalid) ||\n              (createdBy.touched && createdBy.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"createdBy\" class=\"required control-label ml-40\"\n              >Created By</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"createdBy\"\n              name=\"createdBy\"\n              #createdBy=\"ngModel\"\n              [(ngModel)]=\"model.createdBy\"\n              class=\"form-control w-40 text-left\"\n              required\n              (click)=\"weekSelector(frequency.value)\"\n            >\n              <option>sysadm</option>\n              <option>Importuser</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && createdBy.invalid) ||\n                (createdBy.touched && createdBy.invalid)\n              \"\n              >Select Created By is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && frequency.invalid) ||\n              (frequency.touched && frequency.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"frequency\" class=\"required control-label ml-40\"\n              >Frequency</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"frequency\"\n              name=\"frequency\"\n              #frequency=\"ngModel\"\n              [(ngModel)]=\"model.frequency\"\n              class=\"form-control w-40 text-left\"\n              required\n              (click)=\"weekSelector(frequency.value)\"\n            >\n              <option value=\"Daily\">Daily</option>\n              <option value=\"Weekly\">Weekly</option>\n              <option value=\"Monthly\">Monthly</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && frequency.invalid) ||\n                (frequency.touched && frequency.invalid)\n              \"\n              >Select Frequency is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && time.invalid) ||\n              (time.touched && time.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"time\" class=\"required control-label ml-40\">Time</label>\n          </td>\n          <td>\n            <input\n              id=\"time\"\n              type=\"time\"\n              name=\"time\"\n              #time=\"ngModel\"\n              [(ngModel)]=\"model.time\"\n              class=\"form-control w-40 d-inline\"\n              required\n            />\n            <span class=\"timeSubLabel\"\n              >Please select time in GMT<br />GMT = IST - 5:30hrs</span\n            >\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && time.invalid) ||\n                (time.touched && time.invalid)\n              \"\n              >Enter Time is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && day.invalid) ||\n              (day.touched && day.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"reportingLevel\" class=\"required control-label ml-40\"\n              >Day</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"day\"\n              name=\"day\"\n              #day=\"ngModel\"\n              [(ngModel)]=\"model.day\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option>Sunday</option>\n              <option>Monday</option>\n              <option>Tuesday</option>\n              <option>Wednesday</option>\n              <option>Thursday</option>\n              <option>Friday</option>\n              <option>Saturday</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && day.invalid) ||\n                (day.touched && day.invalid)\n              \"\n              >Select Day is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && date.invalid) ||\n              (date.touched && date.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"createdOn\" class=\"required control-label ml-40\"\n              >Date</label\n            >\n          </td>\n          <td>\n            <input\n              type=\"date\"\n              id=\"date\"\n              name=\"date\"\n              #date=\"ngModel\"\n              [(ngModel)]=\"model.date\"\n              class=\"form-control w-40\"\n              required\n            />\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && date.invalid) ||\n                (date.touched && date.invalid)\n              \"\n              >Enter Date is required</span\n            >\n          </td>\n        </tr>\n\n        <tr scope=\"row\" class=\"form-group\">\n          <td>\n            <label for=\"comments\" class=\"ml-40\">Comments</label>\n          </td>\n          <td>\n            <textarea\n              placeholder=\"Put your comments here...\"\n              id=\"comments\"\n              class=\"form-control w-100\"\n              name=\"comments\"\n              #comments=\"ngModel\"\n              [(ngModel)]=\"model.comments\"\n            ></textarea>\n          </td>\n        </tr>\n        <tr scope=\"row\">\n          <td colspan=\"2\">\n            <div class=\"col-md-12 col-sm-12 text-center\">\n              <button class=\"btn btn-grad btn-default\">\n                Save\n              </button>\n              <button class=\"btn btn-grad btn-default ml-5\" type=\"reset\">\n                Cancel\n              </button>\n            </div>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </form>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <h3 class=\"text-center color-grey\">Edit Scheduled EDR Job</h3>\n  <hr />\n  <form id=\"submitEdrJob\" name=\"submitEdrJob\" #submitEdrJob=\"ngForm\" novalidate>\n    <table class=\"table table-striped table-bordered\">\n      <tbody>\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && jobName.invalid) ||\n              (jobName.touched && jobName.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"jobName\" class=\"required control-label ml-40\"\n              >Enter Job Name</label\n            >\n          </td>\n          <td>\n            <input\n              type=\"text\"\n              id=\"jobName\"\n              name=\"jobName\"\n              #jobName=\"ngModel\"\n              [(ngModel)]=\"model.jobName\"\n              class=\"form-control w-40 text-left\"\n              required\n              minlength=\"2\"\n              required\n            />\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && jobName.invalid) ||\n                (jobName.touched && jobName.invalid)\n              \"\n              >Job name is required</span\n            >\n          </td>\n        </tr>\n\n        <tr scope=\"row\" class=\"form-group\">\n          <td>\n            <label for=\"selectCustomer\" class=\"required control-label ml-40\"\n              >Select Customer</label\n            >\n          </td>\n          <td>\n            <select type=\"text\" class=\"form-control w-40 text-left\" required>\n              <option>AB</option>\n              <option>ASBANC-O-MS-PE</option>\n              <option>ATT-O-MS-MX</option>\n            </select>\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && objectType.invalid) ||\n              (objectType.touched && objectType.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"objectType\" class=\"required control-label ml-40\"\n              >Object Type</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"objectType\"\n              name=\"objectType\"\n              #objectType=\"ngModel\"\n              [(ngModel)]=\"model.objectType\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option value=\"{{ model.objectType }}\">{{\n                model.objectType\n              }}</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && objectType.invalid) ||\n                (objectType.touched && objectType.invalid)\n              \"\n              >Select Object is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && source.invalid) ||\n              (source.touched && source.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"source\" class=\"required control-label ml-40\"\n              >Source</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"source\"\n              name=\"source\"\n              #source=\"ngModel\"\n              [(ngModel)]=\"model.source\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option>EMS</option>\n              <option>ASBANC-O-MS-PE</option>\n              <option>ATT-O-MS-MX</option>\n              <option>ENM4</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && source.invalid) ||\n                (source.touched && source.invalid)\n              \"\n              >Select Source is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && createdOn.invalid) ||\n              (createdOn.touched && createdOn.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"createdOn\" class=\"required control-label ml-40\"\n              >Created On</label\n            >\n          </td>\n          <td>\n            <input\n              type=\"date\"\n              id=\"createdOn\"\n              name=\"createdOn\"\n              #createdOn=\"ngModel\"\n              [(ngModel)]=\"model.createdOn\"\n              class=\"form-control w-40\"\n              required\n            />\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && createdOn.invalid) ||\n                (createdOn.touched && createdOn.invalid)\n              \"\n              >Enter Created On is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && createdBy.invalid) ||\n              (createdBy.touched && createdBy.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"createdBy\" class=\"required control-label ml-40\"\n              >Created By</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"createdBy\"\n              name=\"createdBy\"\n              #createdBy=\"ngModel\"\n              [(ngModel)]=\"model.createdBy\"\n              class=\"form-control w-40 text-left\"\n              required\n              (click)=\"weekSelector(frequency.value)\"\n            >\n              <option>sysadm</option>\n              <option>Importuser</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && createdBy.invalid) ||\n                (createdBy.touched && createdBy.invalid)\n              \"\n              >Select Created By is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && frequency.invalid) ||\n              (frequency.touched && frequency.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"frequency\" class=\"required control-label ml-40\"\n              >Frequency</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"frequency\"\n              name=\"frequency\"\n              #frequency=\"ngModel\"\n              [(ngModel)]=\"model.frequency\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option value=\"Daily\">Daily</option>\n              <option value=\"Weekly\">Weekly</option>\n              <option value=\"Monthly\">Monthly</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && frequency.invalid) ||\n                (frequency.touched && frequency.invalid)\n              \"\n              >Select Frequency is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && time.invalid) ||\n              (time.touched && time.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"time\" class=\"required control-label ml-40\">Time</label>\n          </td>\n          <td>\n            <input\n              id=\"time\"\n              type=\"time\"\n              name=\"time\"\n              #time=\"ngModel\"\n              [(ngModel)]=\"model.time\"\n              class=\"form-control w-40 d-inline\"\n              required\n            />\n            <span class=\"timeSubLabel\"\n              >Please select time in GMT<br />GMT = IST - 5:30hrs</span\n            >\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && time.invalid) ||\n                (time.touched && time.invalid)\n              \"\n              >Enter Time is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && day.invalid) ||\n              (day.touched && day.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"reportingLevel\" class=\"required control-label ml-40\"\n              >Day</label\n            >\n          </td>\n          <td>\n            <select\n              type=\"text\"\n              id=\"day\"\n              name=\"day\"\n              #day=\"ngModel\"\n              [(ngModel)]=\"model.day\"\n              class=\"form-control w-40 text-left\"\n              required\n            >\n              <option>Sunday</option>\n              <option>Monday</option>\n              <option>Tuesday</option>\n              <option>Wednesday</option>\n              <option>Thursday</option>\n              <option>Friday</option>\n              <option>Saturday</option>\n            </select>\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && day.invalid) ||\n                (day.touched && day.invalid)\n              \"\n              >Select Day is required</span\n            >\n          </td>\n        </tr>\n\n        <tr\n          scope=\"row\"\n          class=\"form-group\"\n          [ngClass]=\"{\n            'has-error':\n              (submitEdrJob.submitted && date.invalid) ||\n              (date.touched && date.invalid)\n          }\"\n        >\n          <td>\n            <label for=\"createdOn\" class=\"required control-label ml-40\"\n              >Date</label\n            >\n          </td>\n          <td>\n            <input\n              type=\"date\"\n              id=\"date\"\n              name=\"date\"\n              #date=\"ngModel\"\n              [(ngModel)]=\"model.date\"\n              class=\"form-control w-40\"\n              required\n            />\n            <span\n              class=\"text-danger show\"\n              *ngIf=\"\n                (submitEdrJob.submitted && date.invalid) ||\n                (date.touched && date.invalid)\n              \"\n              >Enter Date is required</span\n            >\n          </td>\n        </tr>\n\n        <tr scope=\"row\" class=\"form-group\">\n          <td>\n            <label for=\"comment\" class=\"ml-40\">Comments</label>\n          </td>\n          <td>\n            <textarea\n              placeholder=\"Put your comments here...\"\n              id=\"comment\"\n              class=\"form-control w-100\"\n              name=\"comment\"\n              #comment=\"ngModel\"\n              [(ngModel)]=\"model.comment\"\n            ></textarea>\n          </td>\n        </tr>\n        <tr scope=\"row\">\n          <td colspan=\"2\">\n            <div class=\"col-md-12 col-sm-12 text-center\">\n              <button class=\"btn btn-grad btn-default\" type=\"submit\">\n                Save\n              </button>\n              <button\n                class=\"btn btn-grad btn-default ml-5\"\n                type=\"reset\"\n                [routerLink]=\"['/scheduledjob']\"\n              >\n                Cancel\n              </button>\n            </div>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n  </form>\n</div>\n");
 
 /***/ }),
 
@@ -84,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-md-4 col-sm-4\">\n      <label for=\"pageSizeJob\">Per Page </label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n          [(ngModel)]=\"pageSize\"\n        >\n          <option [ngValue]=\"5\">5</option>\n          <option [ngValue]=\"10\">10</option>\n          <option [ngValue]=\"25\">25</option>\n          <option [ngValue]=\"50\">50</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-md-8 col-sm-8 headingText\">\n      <h3>Scheduled Jobs</h3>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-5 col-sm-5\">\n      <label for=\"pageSizeJob\">Select Customer</label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n        >\n          <option>Select</option>\n          <option>AB</option>\n          <option>Bharti NMC</option>\n          <option>ASBANC-O-MS-PE</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-sm-4 col-md-4\" style=\"float:right\">\n      <div class=\"col-md-8 col-sm-8\" style=\"margin:10px\">\n        <input\n          class=\"searchBox\"\n          type=\"text\"\n          placeholder=\"Search\"\n          [(ngModel)]=\"searchText\"\n        />\n      </div>\n      <div type=\"button\" class=\"btn btn-secondary buttonRefresh\">\n        <img\n          src=\"../../assets/images/Refresh.svg\"\n          width=\"16\"\n          height=\"16\"\n          name=\"refreshIcon\"\n          alt=\"alternative text\"\n          title=\"Refresh List\"\n        />\n      </div>\n    </div>\n  </div>\n  <div class=\"row table-responsive\">\n    <table class=\"table table-sm table-bordered table-striped\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Select</th>\n          <th scope=\"col\">\n            Job Name\n          </th>\n          <th scope=\"col\">\n            Object Type\n          </th>\n          <th scope=\"col\">\n            Source\n          </th>\n          <th scope=\"col\">\n            Created On\n          </th>\n          <th scope=\"col\">\n            Created By\n          </th>\n          <th scope=\"col\">\n            Frequency\n          </th>\n          <th scope=\"col\">\n            Time\n          </th>\n          <th scope=\"col\">\n            Day\n          </th>\n          <th scope=\"col\">\n            Date\n          </th>\n          <th scope=\"col\">\n            Comments\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr\n          *ngFor=\"\n            let scheduledData of scheduledjobData\n              | filter: searchText\n              | paginate: { itemsPerPage: pageSize, currentPage: p };\n            let i = index\n          \"\n        >\n          <td>\n            <input\n              type=\"radio\"\n              id=\"radioID{{ i + 1 }}\"\n              name=\"name\"\n              value=\"{{ scheduledData | json }}\"\n              [(ngModel)]=\"jobRadio\"\n            />\n          </td>\n          <td>{{ scheduledData.jobName }}</td>\n          <td>{{ scheduledData.objectType }}</td>\n          <td>{{ scheduledData.source }}</td>\n          <td>{{ scheduledData.createdOn }}</td>\n          <td>{{ scheduledData.createdBy }}</td>\n          <td>{{ scheduledData.frequency }}</td>\n          <td>{{ scheduledData.time }}</td>\n          <td>{{ scheduledData.day }}</td>\n          <td>{{ scheduledData.date }}</td>\n          <td>{{ scheduledData.comment }}</td>\n        </tr>\n      </tbody>\n    </table>\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n  </div>\n  <div class=\"row mb-5\">\n    <div class=\"col-md-12 col-sm-12 text-center\">\n      <button\n        class=\"btn btn-grad btn-default\"\n        id=\"\"\n        type=\"button\"\n        [disabled]=\"!jobRadio\"\n        (click)=\"checkoptions(scheduledjobData)\"\n      >\n        Edit\n      </button>\n      <button\n        class=\"btn btn-grad btn-default ml-5\"\n        id=\"\"\n        type=\"button\"\n        [disabled]=\"!jobRadio\"\n        (click)=\"deleteJob(scheduledjobData)\"\n      >\n        Delete\n      </button>\n    </div>\n  </div>\n  <span style=\"color:Red\">{{ msg }}</span>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n  <div class=\"row\">\n    <div class=\"col-md-4 col-sm-4\">\n      <label for=\"pageSizeJob\">Per Page </label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n          [(ngModel)]=\"pageSize\"\n        >\n          <option [ngValue]=\"5\">5</option>\n          <option [ngValue]=\"10\">10</option>\n          <option [ngValue]=\"25\">25</option>\n          <option [ngValue]=\"50\">50</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-md-8 col-sm-8 headingText\">\n      <h3>Scheduled Jobs</h3>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-md-5 col-sm-5\">\n      <label for=\"pageSizeJob\">Select Customer</label>\n      <div class=\"pageperItem\">\n        <select\n          id=\"pageSizeJob\"\n          name=\"pageSizeJob\"\n          class=\"form-control\"\n          placeholder=\"Per Page\"\n        >\n          <option>Select</option>\n          <option>AB</option>\n          <option>Bharti NMC</option>\n          <option>ASBANC-O-MS-PE</option>\n        </select>\n      </div>\n    </div>\n    <div class=\"col-sm-4 col-md-4\" style=\"float:right\">\n      <div class=\"col-md-8 col-sm-8\" style=\"margin:10px\">\n        <input\n          class=\"searchBox\"\n          type=\"text\"\n          placeholder=\"Search\"\n          [(ngModel)]=\"searchText\"\n        />\n      </div>\n      <div type=\"button\" class=\"btn btn-secondary buttonRefresh\">\n        <img\n          src=\"../../assets/images/Refresh.svg\"\n          width=\"16\"\n          height=\"16\"\n          name=\"refreshIcon\"\n          alt=\"alternative text\"\n          title=\"Refresh List\"\n        />\n      </div>\n    </div>\n  </div>\n  <div class=\"row table-responsive\">\n    <table class=\"table table-sm table-bordered table-striped\">\n      <thead>\n        <tr>\n          <th scope=\"col\">Select</th>\n          <th scope=\"col\">\n            Job Name\n          </th>\n          <th scope=\"col\">\n            Object Type\n          </th>\n          <th scope=\"col\">\n            Source\n          </th>\n          <th scope=\"col\">\n            Created On\n          </th>\n          <th scope=\"col\">\n            Created By\n          </th>\n          <th scope=\"col\">\n            Frequency\n          </th>\n          <th scope=\"col\">\n            Time\n          </th>\n          <th scope=\"col\">\n            Day\n          </th>\n          <th scope=\"col\">\n            Date\n          </th>\n          <th scope=\"col\">\n            Comments\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr\n          *ngFor=\"\n            let scheduledData of scheduledjobData\n              | filter: searchText\n              | paginate: { itemsPerPage: pageSize, currentPage: p };\n            let i = index\n          \"\n        >\n          <td>\n            <input\n              type=\"radio\"\n              id=\"radioID{{ i + 1 }}\"\n              name=\"name\"\n              value=\"{{ scheduledData | json }}\"\n              [(ngModel)]=\"jobRadio\"\n            />\n          </td>\n          <td>{{ scheduledData.jobName }}</td>\n          <td>{{ scheduledData.objectType }}</td>\n          <td>{{ scheduledData.source }}</td>\n          <td>{{ scheduledData.createdOn }}</td>\n          <td>{{ scheduledData.createdBy }}</td>\n          <td>{{ scheduledData.frequency }}</td>\n          <td>{{ scheduledData.time }}</td>\n          <td>{{ scheduledData.day }}</td>\n          <td>{{ scheduledData.date }}</td>\n          <td>{{ scheduledData.comment }}</td>\n        </tr>\n      </tbody>\n    </table>\n    <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n  </div>\n  <div class=\"row mb-5\">\n    <div class=\"col-md-12 col-sm-12 text-center\">\n      <button\n        class=\"btn btn-grad btn-default\"\n        id=\"\"\n        type=\"button\"\n        [disabled]=\"!jobRadio\"\n        (click)=\"checkoptions()\"\n      >\n        Edit\n      </button>\n      <button\n        class=\"btn btn-grad btn-default ml-5\"\n        id=\"\"\n        type=\"button\"\n        [disabled]=\"!jobRadio\"\n        (click)=\"deleteJob()\"\n      >\n        Delete\n      </button>\n    </div>\n  </div>\n  <span style=\"color:Red\">{{ msg }}</span>\n</div>\n");
 
 /***/ }),
 
@@ -348,6 +361,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _submit_edr_job_submit_edr_job_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./submit-edr-job/submit-edr-job.component */ "./src/app/submit-edr-job/submit-edr-job.component.ts");
 /* harmony import */ var _scheduled_job_list_scheduled_job_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scheduled-job-list/scheduled-job-list.component */ "./src/app/scheduled-job-list/scheduled-job-list.component.ts");
 /* harmony import */ var _scheduled_job_edit_scheduled_job_edit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scheduled-job-edit/scheduled-job-edit.component */ "./src/app/scheduled-job-edit/scheduled-job-edit.component.ts");
+/* harmony import */ var _home_job_report_home_job_report_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home-job-report/home-job-report.component */ "./src/app/home-job-report/home-job-report.component.ts");
+
 
 
 
@@ -360,7 +375,8 @@ const routes = [
     { path: "jobstatus", component: _job_status_home_job_status_home_component__WEBPACK_IMPORTED_MODULE_3__["JobStatusHomeComponent"] },
     { path: "submittedjob", component: _submit_edr_job_submit_edr_job_component__WEBPACK_IMPORTED_MODULE_4__["SubmitEdrJobComponent"] },
     { path: "scheduledjob", component: _scheduled_job_list_scheduled_job_list_component__WEBPACK_IMPORTED_MODULE_5__["ScheduledJobListComponent"] },
-    { path: "scheduledjobedit", component: _scheduled_job_edit_scheduled_job_edit_component__WEBPACK_IMPORTED_MODULE_6__["ScheduledJobEditComponent"] }
+    { path: "scheduledjobedit", component: _scheduled_job_edit_scheduled_job_edit_component__WEBPACK_IMPORTED_MODULE_6__["ScheduledJobEditComponent"] },
+    { path: "homejobreport", component: _home_job_report_home_job_report_component__WEBPACK_IMPORTED_MODULE_7__["HomeJobReportComponent"] }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -375,7 +391,8 @@ const RoutingComponents = [
     _job_status_home_job_status_home_component__WEBPACK_IMPORTED_MODULE_3__["JobStatusHomeComponent"],
     _submit_edr_job_submit_edr_job_component__WEBPACK_IMPORTED_MODULE_4__["SubmitEdrJobComponent"],
     _scheduled_job_list_scheduled_job_list_component__WEBPACK_IMPORTED_MODULE_5__["ScheduledJobListComponent"],
-    _scheduled_job_edit_scheduled_job_edit_component__WEBPACK_IMPORTED_MODULE_6__["ScheduledJobEditComponent"]
+    _scheduled_job_edit_scheduled_job_edit_component__WEBPACK_IMPORTED_MODULE_6__["ScheduledJobEditComponent"],
+    _home_job_report_home_job_report_component__WEBPACK_IMPORTED_MODULE_7__["HomeJobReportComponent"]
 ];
 
 
@@ -447,6 +464,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng2_search_filter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ng2-search-filter */ "./node_modules/ng2-search-filter/ng2-search-filter.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm2015/animations.js");
 /* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/fesm2015/ngx-order-pipe.js");
+/* harmony import */ var _home_job_report_home_job_report_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./home-job-report/home-job-report.component */ "./src/app/home-job-report/home-job-report.component.ts");
+
 
 
 
@@ -463,7 +482,7 @@ let AppModule = class AppModule {
 };
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_7__["NavigationComponent"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["RoutingComponents"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_7__["NavigationComponent"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["RoutingComponents"], _home_job_report_home_job_report_component__WEBPACK_IMPORTED_MODULE_12__["HomeJobReportComponent"]],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
@@ -478,6 +497,81 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/home-job-report/home-job-report.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/home-job-report/home-job-report.component.css ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".pageperItem {\r\n  width: auto;\r\n  display: inline-block;\r\n  margin: 10px;\r\n}\r\n.headingText > h3 {\r\n  color: grey;\r\n  margin: 13px;\r\n}\r\n.searchBox {\r\n  border: none;\r\n  border-bottom: 1px solid #e6e6e6;\r\n}\r\n.buttonRefresh {\r\n  display: inline-block;\r\n  margin: 5px 10px;\r\n  background: rgb(35, 35, 37);\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgba(35, 35, 37, 1) 0%,\r\n    rgba(167, 170, 171, 0.4490838571756828) 1%,\r\n    rgba(173, 173, 173, 1) 100%\r\n  );\r\n}\r\ntable > thead > tr > th,\r\ntable > tbody > tr > td {\r\n  text-align: center;\r\n}\r\npagination-controls {\r\n  float: right;\r\n}\r\nthead th {\r\n  cursor: pointer;\r\n  margin-right: 15px;\r\n  margin-left: 15px;\r\n  padding: 8px 5px;\r\n}\r\nthead th span {\r\n  visibility: hidden;\r\n}\r\nthead th.active {\r\n  color: #000;\r\n}\r\nthead th.active span {\r\n  visibility: visible;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1qb2ItcmVwb3J0L2hvbWUtam9iLXJlcG9ydC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtFQUNyQixZQUFZO0FBQ2Q7QUFDQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0FBQ2Q7QUFDQTtFQUNFLFlBQVk7RUFDWixnQ0FBZ0M7QUFDbEM7QUFDQTtFQUNFLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCOzs7OztHQUtDO0FBQ0g7QUFFQTs7RUFFRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLFlBQVk7QUFDZDtBQUVBO0VBQ0UsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUNBO0VBQ0UsbUJBQW1CO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvaG9tZS1qb2ItcmVwb3J0L2hvbWUtam9iLXJlcG9ydC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhZ2VwZXJJdGVtIHtcclxuICB3aWR0aDogYXV0bztcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG59XHJcbi5oZWFkaW5nVGV4dCA+IGgzIHtcclxuICBjb2xvcjogZ3JleTtcclxuICBtYXJnaW46IDEzcHg7XHJcbn1cclxuLnNlYXJjaEJveCB7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTZlNmU2O1xyXG59XHJcbi5idXR0b25SZWZyZXNoIHtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiA1cHggMTBweDtcclxuICBiYWNrZ3JvdW5kOiByZ2IoMzUsIDM1LCAzNyk7XHJcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxyXG4gICAgMTgwZGVnLFxyXG4gICAgcmdiYSgzNSwgMzUsIDM3LCAxKSAwJSxcclxuICAgIHJnYmEoMTY3LCAxNzAsIDE3MSwgMC40NDkwODM4NTcxNzU2ODI4KSAxJSxcclxuICAgIHJnYmEoMTczLCAxNzMsIDE3MywgMSkgMTAwJVxyXG4gICk7XHJcbn1cclxuXHJcbnRhYmxlID4gdGhlYWQgPiB0ciA+IHRoLFxyXG50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZCB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbnBhZ2luYXRpb24tY29udHJvbHMge1xyXG4gIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxudGhlYWQgdGgge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgcGFkZGluZzogOHB4IDVweDtcclxufVxyXG50aGVhZCB0aCBzcGFuIHtcclxuICB2aXNpYmlsaXR5OiBoaWRkZW47XHJcbn1cclxudGhlYWQgdGguYWN0aXZlIHtcclxuICBjb2xvcjogIzAwMDtcclxufVxyXG50aGVhZCB0aC5hY3RpdmUgc3BhbiB7XHJcbiAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxufVxyXG4iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/home-job-report/home-job-report.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/home-job-report/home-job-report.component.ts ***!
+  \**************************************************************/
+/*! exports provided: HomeJobReportComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeJobReportComponent", function() { return HomeJobReportComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_home_job_report_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/home-job-report.service */ "./src/app/services/home-job-report.service.ts");
+/* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/fesm2015/ngx-order-pipe.js");
+
+
+
+
+let HomeJobReportComponent = class HomeJobReportComponent {
+    constructor(orderPipe, _homejobreportservice) {
+        this.orderPipe = orderPipe;
+        this._homejobreportservice = _homejobreportservice;
+        this.homejobreportData = [];
+        this.pageSize = 5;
+        this.order = "name";
+        this.reverse = false;
+        this.sortedCollection = orderPipe.transform(this.homejobreportData, "jobKey");
+        //console.log(this.sortedCollection);
+    }
+    setOrder(value) {
+        if (this.order === value) {
+            this.reverse = !this.reverse;
+        }
+        this.order = value;
+    }
+    ngOnInit() {
+        this._homejobreportservice.getJobStatus().subscribe(data => (this.homejobreportData = data), (error) => {
+            if (error.status === 404) {
+                alert("This data is not available on server");
+            }
+            else {
+                alert("An unexpected error occurred");
+            }
+        });
+    }
+};
+HomeJobReportComponent.ctorParameters = () => [
+    { type: ngx_order_pipe__WEBPACK_IMPORTED_MODULE_3__["OrderPipe"] },
+    { type: _services_home_job_report_service__WEBPACK_IMPORTED_MODULE_2__["HomeJobReportService"] }
+];
+HomeJobReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "app-home-job-report",
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home-job-report.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home-job-report/home-job-report.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home-job-report.component.css */ "./src/app/home-job-report/home-job-report.component.css")).default]
+    })
+], HomeJobReportComponent);
 
 
 
@@ -508,7 +602,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobStatusHomeComponent", function() { return JobStatusHomeComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _job_status_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../job-status.service */ "./src/app/job-status.service.ts");
+/* harmony import */ var _services_job_status_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/job-status.service */ "./src/app/services/job-status.service.ts");
 /* harmony import */ var ngx_order_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-order-pipe */ "./node_modules/ngx-order-pipe/fesm2015/ngx-order-pipe.js");
 
 
@@ -544,7 +638,7 @@ let JobStatusHomeComponent = class JobStatusHomeComponent {
 };
 JobStatusHomeComponent.ctorParameters = () => [
     { type: ngx_order_pipe__WEBPACK_IMPORTED_MODULE_3__["OrderPipe"] },
-    { type: _job_status_service__WEBPACK_IMPORTED_MODULE_2__["JobStatusService"] }
+    { type: _services_job_status_service__WEBPACK_IMPORTED_MODULE_2__["JobStatusService"] }
 ];
 JobStatusHomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -553,44 +647,6 @@ JobStatusHomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./job-status-home.component.css */ "./src/app/job-status-home/job-status-home.component.css")).default]
     })
 ], JobStatusHomeComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/job-status.service.ts":
-/*!***************************************!*\
-  !*** ./src/app/job-status.service.ts ***!
-  \***************************************/
-/*! exports provided: JobStatusService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobStatusService", function() { return JobStatusService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-
-
-
-let JobStatusService = class JobStatusService {
-    constructor(http) {
-        this.http = http;
-        this._url = "/assets/data/jobStatus.json";
-    }
-    getJobStatus() {
-        return this.http.get(this._url);
-    }
-};
-JobStatusService.ctorParameters = () => [
-    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
-];
-JobStatusService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: "root"
-    })
-], JobStatusService);
 
 
 
@@ -640,6 +696,36 @@ NavigationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/scheduled-job-edit/edredit-model.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/scheduled-job-edit/edredit-model.ts ***!
+  \*****************************************************/
+/*! exports provided: EdrEditModel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EdrEditModel", function() { return EdrEditModel; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class EdrEditModel {
+    constructor(jobName, objectType, source, createdOn, createdBy, frequency, time, day, date, comment) {
+        this.jobName = jobName;
+        this.objectType = objectType;
+        this.source = source;
+        this.createdOn = createdOn;
+        this.createdBy = createdBy;
+        this.frequency = frequency;
+        this.time = time;
+        this.day = day;
+        this.date = date;
+        this.comment = comment;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/app/scheduled-job-edit/scheduled-job-edit.component.css":
 /*!*********************************************************************!*\
   !*** ./src/app/scheduled-job-edit/scheduled-job-edit.component.css ***!
@@ -665,16 +751,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScheduledJobEditComponent", function() { return ScheduledJobEditComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _edredit_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edredit-model */ "./src/app/scheduled-job-edit/edredit-model.ts");
+
+
 
 
 let ScheduledJobEditComponent = class ScheduledJobEditComponent {
-    constructor() { }
+    constructor(router) {
+        this.router = router;
+        this.model = new _edredit_model__WEBPACK_IMPORTED_MODULE_3__["EdrEditModel"]("", "", "", "", "", "", "", "", "", "");
+        this.router.getCurrentNavigation().extras.state;
+    }
     ngOnInit() {
+        if (window.history.state.data == undefined) {
+        }
+        else {
+            let str = history.state.data;
+            let jsonData = JSON.parse(str);
+            this.model = jsonData;
+            console.log(jsonData);
+        }
     }
 };
+ScheduledJobEditComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 ScheduledJobEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-scheduled-job-edit',
+        selector: "app-scheduled-job-edit",
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./scheduled-job-edit.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/scheduled-job-edit/scheduled-job-edit.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./scheduled-job-edit.component.css */ "./src/app/scheduled-job-edit/scheduled-job-edit.component.css")).default]
     })
@@ -684,10 +789,169 @@ ScheduledJobEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/scheduled-job-list.service.ts":
-/*!***********************************************!*\
-  !*** ./src/app/scheduled-job-list.service.ts ***!
-  \***********************************************/
+/***/ "./src/app/scheduled-job-list/scheduled-job-list.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/scheduled-job-list/scheduled-job-list.component.css ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".pageperItem {\r\n  width: auto;\r\n  display: inline-block;\r\n  margin: 10px;\r\n}\r\n.headingText > h3 {\r\n  color: grey;\r\n  margin: 13px;\r\n}\r\n.searchBox {\r\n  border: none;\r\n  border-bottom: 1px solid #e6e6e6;\r\n}\r\n.buttonRefresh {\r\n  display: inline-block;\r\n  margin: 5px 10px;\r\n  background: rgb(35, 35, 37);\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgba(35, 35, 37, 1) 0%,\r\n    rgba(167, 170, 171, 0.4490838571756828) 1%,\r\n    rgba(173, 173, 173, 1) 100%\r\n  );\r\n}\r\ntable > thead > tr > th,\r\ntable > tbody > tr > td {\r\n  text-align: center;\r\n}\r\npagination-controls {\r\n  float: right;\r\n}\r\nthead th {\r\n  cursor: pointer;\r\n  margin-right: 15px;\r\n  margin-left: 15px;\r\n  padding: 8px 5px;\r\n}\r\nthead th span {\r\n  visibility: hidden;\r\n}\r\nthead th.active {\r\n  color: #000;\r\n}\r\nthead th.active span {\r\n  visibility: visible;\r\n}\r\n.ml-40 {\r\n  margin-left: 40% !important;\r\n}\r\nlabel {\r\n  font-weight: 400;\r\n}\r\n.color-grey {\r\n  color: #adadad;\r\n  font-weight: 500;\r\n}\r\n.btn-grad {\r\n  background-image: linear-gradient(\r\n    to right,\r\n    #ece9e6 0%,\r\n    #ffffff 51%,\r\n    #ece9e6 100%\r\n  );\r\n}\r\n.btn-grad:hover {\r\n  background-position: right center;\r\n}\r\n.timeSubLabel {\r\n  display: inline-block;\r\n  margin: 3px 10px;\r\n  position: absolute;\r\n  line-height: 15px;\r\n  font-size: 12px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NoZWR1bGVkLWpvYi1saXN0L3NjaGVkdWxlZC1qb2ItbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtFQUNyQixZQUFZO0FBQ2Q7QUFDQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0FBQ2Q7QUFDQTtFQUNFLFlBQVk7RUFDWixnQ0FBZ0M7QUFDbEM7QUFDQTtFQUNFLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCOzs7OztHQUtDO0FBQ0g7QUFFQTs7RUFFRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLFlBQVk7QUFDZDtBQUVBO0VBQ0UsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUNBO0VBQ0UsbUJBQW1CO0FBQ3JCO0FBQ0E7RUFDRSwyQkFBMkI7QUFDN0I7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUVBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0U7Ozs7O0dBQTJHO0FBQzdHO0FBQ0E7RUFDRSxpQ0FBaUM7QUFDbkM7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvc2NoZWR1bGVkLWpvYi1saXN0L3NjaGVkdWxlZC1qb2ItbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhZ2VwZXJJdGVtIHtcclxuICB3aWR0aDogYXV0bztcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG59XHJcbi5oZWFkaW5nVGV4dCA+IGgzIHtcclxuICBjb2xvcjogZ3JleTtcclxuICBtYXJnaW46IDEzcHg7XHJcbn1cclxuLnNlYXJjaEJveCB7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTZlNmU2O1xyXG59XHJcbi5idXR0b25SZWZyZXNoIHtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiA1cHggMTBweDtcclxuICBiYWNrZ3JvdW5kOiByZ2IoMzUsIDM1LCAzNyk7XHJcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxyXG4gICAgMTgwZGVnLFxyXG4gICAgcmdiYSgzNSwgMzUsIDM3LCAxKSAwJSxcclxuICAgIHJnYmEoMTY3LCAxNzAsIDE3MSwgMC40NDkwODM4NTcxNzU2ODI4KSAxJSxcclxuICAgIHJnYmEoMTczLCAxNzMsIDE3MywgMSkgMTAwJVxyXG4gICk7XHJcbn1cclxuXHJcbnRhYmxlID4gdGhlYWQgPiB0ciA+IHRoLFxyXG50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZCB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbnBhZ2luYXRpb24tY29udHJvbHMge1xyXG4gIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxudGhlYWQgdGgge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgcGFkZGluZzogOHB4IDVweDtcclxufVxyXG50aGVhZCB0aCBzcGFuIHtcclxuICB2aXNpYmlsaXR5OiBoaWRkZW47XHJcbn1cclxudGhlYWQgdGguYWN0aXZlIHtcclxuICBjb2xvcjogIzAwMDtcclxufVxyXG50aGVhZCB0aC5hY3RpdmUgc3BhbiB7XHJcbiAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxufVxyXG4ubWwtNDAge1xyXG4gIG1hcmdpbi1sZWZ0OiA0MCUgIWltcG9ydGFudDtcclxufVxyXG5sYWJlbCB7XHJcbiAgZm9udC13ZWlnaHQ6IDQwMDtcclxufVxyXG5cclxuLmNvbG9yLWdyZXkge1xyXG4gIGNvbG9yOiAjYWRhZGFkO1xyXG4gIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn1cclxuLmJ0bi1ncmFkIHtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoXHJcbiAgICB0byByaWdodCxcclxuICAgICNlY2U5ZTYgMCUsXHJcbiAgICAjZmZmZmZmIDUxJSxcclxuICAgICNlY2U5ZTYgMTAwJVxyXG4gICk7XHJcbn1cclxuLmJ0bi1ncmFkOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodCBjZW50ZXI7XHJcbn1cclxuXHJcbi50aW1lU3ViTGFiZWwge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW46IDNweCAxMHB4O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsaW5lLWhlaWdodDogMTVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/scheduled-job-list/scheduled-job-list.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/scheduled-job-list/scheduled-job-list.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ScheduledJobListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScheduledJobListComponent", function() { return ScheduledJobListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_scheduled_job_list_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/scheduled-job-list.service */ "./src/app/services/scheduled-job-list.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let ScheduledJobListComponent = class ScheduledJobListComponent {
+    constructor(_scheduledjoblistservice, router) {
+        this._scheduledjoblistservice = _scheduledjoblistservice;
+        this.router = router;
+        this.name = "Angular";
+        this.scheduledjobData = [];
+        this.pageSize = 5;
+        this.checkoptions = function () {
+            if (this.jobRadio != undefined) {
+                this.msg = "Selected Value: " + this.jobRadio;
+                this.router.navigateByUrl("/scheduledjobedit", {
+                    state: { data: this.jobRadio }
+                });
+            }
+            else {
+                this.msg = "Please choose an option";
+            }
+        };
+        this.deleteJob = function () {
+            let str = this.jobRadio;
+            let jsonData = JSON.parse(str);
+            //console.log(jsonData);
+            alert("Please confirm if want to delete " + jsonData.jobName);
+        };
+    }
+    ngOnInit() {
+        this._scheduledjoblistservice.getScheduledJobList().subscribe(data => (this.scheduledjobData = data), (error) => {
+            if (error.status === 404) {
+                alert("This data is not available on server");
+            }
+            else {
+                alert("An unexpected error occurred");
+            }
+        });
+    }
+};
+ScheduledJobListComponent.ctorParameters = () => [
+    { type: _services_scheduled_job_list_service__WEBPACK_IMPORTED_MODULE_2__["ScheduledJobListService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
+ScheduledJobListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: "app-scheduled-job-list",
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./scheduled-job-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/scheduled-job-list/scheduled-job-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./scheduled-job-list.component.css */ "./src/app/scheduled-job-list/scheduled-job-list.component.css")).default]
+    })
+], ScheduledJobListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/home-job-report.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/home-job-report.service.ts ***!
+  \*****************************************************/
+/*! exports provided: HomeJobReportService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeJobReportService", function() { return HomeJobReportService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let HomeJobReportService = class HomeJobReportService {
+    constructor(http) {
+        this.http = http;
+        this._url = "/assets/data/homejobReport.json";
+    }
+    getJobStatus() {
+        return this.http.get(this._url);
+    }
+};
+HomeJobReportService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+HomeJobReportService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root"
+    })
+], HomeJobReportService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/job-status.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/services/job-status.service.ts ***!
+  \************************************************/
+/*! exports provided: JobStatusService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobStatusService", function() { return JobStatusService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let JobStatusService = class JobStatusService {
+    constructor(http) {
+        this.http = http;
+        this._url = "/assets/data/jobStatus.json";
+    }
+    getJobStatus() {
+        return this.http.get(this._url);
+    }
+};
+JobStatusService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+JobStatusService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root"
+    })
+], JobStatusService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/scheduled-job-list.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/services/scheduled-job-list.service.ts ***!
+  \********************************************************/
 /*! exports provided: ScheduledJobListService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -722,89 +986,10 @@ ScheduledJobListService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/scheduled-job-list/scheduled-job-list.component.css":
-/*!*********************************************************************!*\
-  !*** ./src/app/scheduled-job-list/scheduled-job-list.component.css ***!
-  \*********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".pageperItem {\r\n  width: auto;\r\n  display: inline-block;\r\n  margin: 10px;\r\n}\r\n.headingText > h3 {\r\n  color: grey;\r\n  margin: 13px;\r\n}\r\n.searchBox {\r\n  border: none;\r\n  border-bottom: 1px solid #e6e6e6;\r\n}\r\n.buttonRefresh {\r\n  display: inline-block;\r\n  margin: 5px 10px;\r\n  background: rgb(35, 35, 37);\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgba(35, 35, 37, 1) 0%,\r\n    rgba(167, 170, 171, 0.4490838571756828) 1%,\r\n    rgba(173, 173, 173, 1) 100%\r\n  );\r\n}\r\ntable > thead > tr > th,\r\ntable > tbody > tr > td {\r\n  text-align: center;\r\n}\r\npagination-controls {\r\n  float: right;\r\n}\r\nthead th {\r\n  cursor: pointer;\r\n  margin-right: 15px;\r\n  margin-left: 15px;\r\n  padding: 8px 5px;\r\n}\r\nthead th span {\r\n  visibility: hidden;\r\n}\r\nthead th.active {\r\n  color: #000;\r\n}\r\nthead th.active span {\r\n  visibility: visible;\r\n}\r\n.ml-40 {\r\n  margin-left: 40% !important;\r\n}\r\nlabel {\r\n  font-weight: 400;\r\n}\r\n.color-grey {\r\n  color: #adadad;\r\n  font-weight: 500;\r\n}\r\n.btn-grad {\r\n  background-image: linear-gradient(\r\n    to right,\r\n    #ece9e6 0%,\r\n    #ffffff 51%,\r\n    #ece9e6 100%\r\n  );\r\n}\r\n.btn-grad:hover {\r\n  background-position: right center;\r\n}\r\n.timeSubLabel {\r\n  display: inline-block;\r\n  margin: 3px 10px;\r\n  position: absolute;\r\n  line-height: 15px;\r\n  font-size: 12px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2NoZWR1bGVkLWpvYi1saXN0L3NjaGVkdWxlZC1qb2ItbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtFQUNyQixZQUFZO0FBQ2Q7QUFDQTtFQUNFLFdBQVc7RUFDWCxZQUFZO0FBQ2Q7QUFDQTtFQUNFLFlBQVk7RUFDWixnQ0FBZ0M7QUFDbEM7QUFDQTtFQUNFLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsMkJBQTJCO0VBQzNCOzs7OztHQUtDO0FBQ0g7QUFFQTs7RUFFRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLFlBQVk7QUFDZDtBQUVBO0VBQ0UsZUFBZTtFQUNmLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsZ0JBQWdCO0FBQ2xCO0FBQ0E7RUFDRSxrQkFBa0I7QUFDcEI7QUFDQTtFQUNFLFdBQVc7QUFDYjtBQUNBO0VBQ0UsbUJBQW1CO0FBQ3JCO0FBQ0E7RUFDRSwyQkFBMkI7QUFDN0I7QUFDQTtFQUNFLGdCQUFnQjtBQUNsQjtBQUVBO0VBQ0UsY0FBYztFQUNkLGdCQUFnQjtBQUNsQjtBQUNBO0VBQ0U7Ozs7O0dBQTJHO0FBQzdHO0FBQ0E7RUFDRSxpQ0FBaUM7QUFDbkM7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvc2NoZWR1bGVkLWpvYi1saXN0L3NjaGVkdWxlZC1qb2ItbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnBhZ2VwZXJJdGVtIHtcclxuICB3aWR0aDogYXV0bztcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiAxMHB4O1xyXG59XHJcbi5oZWFkaW5nVGV4dCA+IGgzIHtcclxuICBjb2xvcjogZ3JleTtcclxuICBtYXJnaW46IDEzcHg7XHJcbn1cclxuLnNlYXJjaEJveCB7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZTZlNmU2O1xyXG59XHJcbi5idXR0b25SZWZyZXNoIHtcclxuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgbWFyZ2luOiA1cHggMTBweDtcclxuICBiYWNrZ3JvdW5kOiByZ2IoMzUsIDM1LCAzNyk7XHJcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxyXG4gICAgMTgwZGVnLFxyXG4gICAgcmdiYSgzNSwgMzUsIDM3LCAxKSAwJSxcclxuICAgIHJnYmEoMTY3LCAxNzAsIDE3MSwgMC40NDkwODM4NTcxNzU2ODI4KSAxJSxcclxuICAgIHJnYmEoMTczLCAxNzMsIDE3MywgMSkgMTAwJVxyXG4gICk7XHJcbn1cclxuXHJcbnRhYmxlID4gdGhlYWQgPiB0ciA+IHRoLFxyXG50YWJsZSA+IHRib2R5ID4gdHIgPiB0ZCB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcbnBhZ2luYXRpb24tY29udHJvbHMge1xyXG4gIGZsb2F0OiByaWdodDtcclxufVxyXG5cclxudGhlYWQgdGgge1xyXG4gIGN1cnNvcjogcG9pbnRlcjtcclxuICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbiAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgcGFkZGluZzogOHB4IDVweDtcclxufVxyXG50aGVhZCB0aCBzcGFuIHtcclxuICB2aXNpYmlsaXR5OiBoaWRkZW47XHJcbn1cclxudGhlYWQgdGguYWN0aXZlIHtcclxuICBjb2xvcjogIzAwMDtcclxufVxyXG50aGVhZCB0aC5hY3RpdmUgc3BhbiB7XHJcbiAgdmlzaWJpbGl0eTogdmlzaWJsZTtcclxufVxyXG4ubWwtNDAge1xyXG4gIG1hcmdpbi1sZWZ0OiA0MCUgIWltcG9ydGFudDtcclxufVxyXG5sYWJlbCB7XHJcbiAgZm9udC13ZWlnaHQ6IDQwMDtcclxufVxyXG5cclxuLmNvbG9yLWdyZXkge1xyXG4gIGNvbG9yOiAjYWRhZGFkO1xyXG4gIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn1cclxuLmJ0bi1ncmFkIHtcclxuICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoXHJcbiAgICB0byByaWdodCxcclxuICAgICNlY2U5ZTYgMCUsXHJcbiAgICAjZmZmZmZmIDUxJSxcclxuICAgICNlY2U5ZTYgMTAwJVxyXG4gICk7XHJcbn1cclxuLmJ0bi1ncmFkOmhvdmVyIHtcclxuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiByaWdodCBjZW50ZXI7XHJcbn1cclxuXHJcbi50aW1lU3ViTGFiZWwge1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICBtYXJnaW46IDNweCAxMHB4O1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsaW5lLWhlaWdodDogMTVweDtcclxuICBmb250LXNpemU6IDEycHg7XHJcbn1cclxuIl19 */");
-
-/***/ }),
-
-/***/ "./src/app/scheduled-job-list/scheduled-job-list.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/scheduled-job-list/scheduled-job-list.component.ts ***!
-  \********************************************************************/
-/*! exports provided: ScheduledJobListComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScheduledJobListComponent", function() { return ScheduledJobListComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _scheduled_job_list_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scheduled-job-list.service */ "./src/app/scheduled-job-list.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-
-
-
-
-let ScheduledJobListComponent = class ScheduledJobListComponent {
-    constructor(_scheduledjoblistservice, router) {
-        this._scheduledjoblistservice = _scheduledjoblistservice;
-        this.router = router;
-        this.scheduledjobData = [];
-        this.pageSize = 5;
-        this.checkoptions = function (choice) {
-            var details = [];
-            if (this.jobRadio != undefined) {
-                this.msg = "Selected Value: " + this.jobRadio;
-                //this.router.navigate(["scheduledjobedit"]);
-                console.log(this.msg);
-            }
-            else {
-                this.msg = "Please choose an option";
-            }
-        };
-        this.deleteJob = function (choice) {
-            alert("Please confirm if want to delete " + this.jobRadio);
-        };
-    }
-    ngOnInit() {
-        this._scheduledjoblistservice.getScheduledJobList().subscribe(data => (this.scheduledjobData = data), (error) => {
-            if (error.status === 404) {
-                alert("This data is not available on server");
-            }
-            else {
-                alert("An unexpected error occurred");
-            }
-        });
-    }
-};
-ScheduledJobListComponent.ctorParameters = () => [
-    { type: _scheduled_job_list_service__WEBPACK_IMPORTED_MODULE_2__["ScheduledJobListService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
-];
-ScheduledJobListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: "app-scheduled-job-list",
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./scheduled-job-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/scheduled-job-list/scheduled-job-list.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./scheduled-job-list.component.css */ "./src/app/scheduled-job-list/scheduled-job-list.component.css")).default]
-    })
-], ScheduledJobListComponent);
-
-
-
-/***/ }),
-
-/***/ "./src/app/submit-edr-data.service.ts":
-/*!********************************************!*\
-  !*** ./src/app/submit-edr-data.service.ts ***!
-  \********************************************/
+/***/ "./src/app/services/submit-edr-data.service.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/services/submit-edr-data.service.ts ***!
+  \*****************************************************/
 /*! exports provided: SubmitEdrDataService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -896,7 +1081,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _edr_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edr-model */ "./src/app/submit-edr-job/edr-model.ts");
-/* harmony import */ var _submit_edr_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../submit-edr-data.service */ "./src/app/submit-edr-data.service.ts");
+/* harmony import */ var _services_submit_edr_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/submit-edr-data.service */ "./src/app/services/submit-edr-data.service.ts");
 
 
 
@@ -939,7 +1124,7 @@ let SubmitEdrJobComponent = class SubmitEdrJobComponent {
     ngOnInit() { }
 };
 SubmitEdrJobComponent.ctorParameters = () => [
-    { type: _submit_edr_data_service__WEBPACK_IMPORTED_MODULE_3__["SubmitEdrDataService"] }
+    { type: _services_submit_edr_data_service__WEBPACK_IMPORTED_MODULE_3__["SubmitEdrDataService"] }
 ];
 SubmitEdrJobComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
